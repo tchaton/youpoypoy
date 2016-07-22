@@ -1,0 +1,8 @@
+        $interval(function(){
+          var youtube = VideosService.getYoutube();
+          var player = youtube.player;
+
+          var time = player.getCurrentTime()/player.getDuration()*100;
+          $scope.stacked.push({})
+          $log.info(player.getCurrentTime());
+        },2000);   

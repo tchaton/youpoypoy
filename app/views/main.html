@@ -1,0 +1,56 @@
+<div id='mainCtrl' ng-controller="MainCtrl">
+	<header>
+      	<nav>
+      		<input id="query" type="text" ng-model="searchInput" placeholder="Search for a YouTube video"></input>
+			<img id="searchIcon" ng-src='./images/search.png' ng-click="changeState()" >
+       	 	<a id="play">{{ youtube.state }}</a>
+      	 	 <a id="pause">Pause</a>
+      		<input id="query2" type="text" ng-model="searchInput2" placeholder="Search for a YouTube video"></input>
+			<img id="searchIcon" ng-src='./images/search.png' ng-click="changeState()" >
+       	 	<a id="play">{{ youtube.state }}</a>
+      	 	 <a id="pause">Pause</a>
+     	</nav>
+ 	</header>
+<div id="fixed" when-scrolled="loadMore()">
+    <div class="video" data-ng-repeat="video in results track by $index" data-ng-click="launchInside(video.id, video.title,$index)" ng-dblclick="queue(video.id, video.title)"> <!-- data-ng-click="queue(video.id, video.title)"> -->
+    		<div ng-show='!showAll[$index]'>
+        	<img class="fixed-image" data-ng-src="{{ video.thumbnail }}">
+        	<p class="video-title">{{ video.title }}</p>
+        	<p class="video-author">{{ video.author }}</p>
+        	<p class="video-description">{{ video.description }}</p>
+        	</div>
+        	<div id="current_player" ng-show='showAll[$index]'>
+        	        	<p class="video-title">{{ video.title }}</p>
+      				<div class="placeHolderInsidd"id="placeholder{{$index}}"></div>
+      		</div>
+    </div>
+</div>
+    <div id="player">
+      <div id="placeholder"></div>
+    </div>
+<div id='lecteur'>
+	<div id='play'>
+	<div>
+    	<uib-progress><uib-bar ng-repeat="bar in stacked track by $index" value="bar.value" type="{{bar.type}}"></uib-bar></uib-progress>
+	</div>
+</div>
+<!--     <div id="playlist">
+      <p id="current">{{ youtube.videoTitle }}</p>
+      <ol id="upcoming" data-ng-show="playlist">
+        <li data-ng-repeat="video in upcoming">
+          <p class="item-delete" data-ng-click="delete('upcoming', video.id)">delete</p>
+          <p class="item-title" data-ng-click="launch(video.id, video.title)">{{video.title}}</p>
+        </li>
+      </ol>
+      <ol id="history" data-ng-hide="playlist">
+        <li data-ng-repeat="video in history">
+          <p class="item-delete" data-ng-click="delete('history', video.id)">delete</p>
+          <p class="item-title" data-ng-click="queue(video.id, video.title)">{{video.title}}</p>
+        </li>
+      </ol>
+      <p id="tabs">
+        <a ng-class="{on:playlist}" data-ng-click="tabulate(true)">Upcoming</a>
+        <a ng-class="{on:!playlist}" data-ng-click="tabulate(false)">History</a>
+      </p> -->
+</div>
+</div>

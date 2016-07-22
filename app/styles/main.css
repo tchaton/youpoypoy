@@ -1,0 +1,81 @@
+header{ background: #df1f1f; color: white; height: 50px; }
+h1{ float: left; line-height: 40px; text-align: center; width: 160px;}
+#search{ float: left; height: 40px;  width: 880px;margin-top:20px;display:inline-block;}
+#searchIcon{background-color: white; width: 45px;height: 45px;background: #df1f1f;-webkit-border-radius: 100px / 160px;-moz-border-radius:    100px / 160px; border-radius:100px / 160px; margin-top:2px;}
+#query{ background: #ac0809; border: none; border-radius: 20px; color: white; float: left; height: 40px; line-height: 30px; padding: 5px 20px; width: 45%; margin-top:3px;}
+#query:focus{ outline: none;}
+#query2{ background: #ac0809; border: none; border-radius: 20px; color: white;  height: 40px; line-height: 30px; padding: 5px 20px; width: 45%; margin-top:3px;}
+#query2:focus{ outline: none;}
+#submit{ position: absolute; right: 10px; top: 5px;}
+#play, #pause{ cursor: pointer;}
+#pause{ display: none;}
+li {
+  height: 120px;
+  border-bottom: 1px solid gray;
+}
+ul {
+	left: 0;
+}
+#fixed {height: 1000px;overflow: auto;width: 25%;background: #f2f5fd; background: #f5f5f5;}
+.video{ cursor: pointer; min-height: 90px; padding:10px;position: relative;overflow: hidden;}
+.video:nth-child(2n-1){ background: #cccccc;}
+.video-image{ float: left;  position: absolute; top: 10px;-webkit-border-radius: 100px / 160px;-moz-border-radius:    100px / 160px; border-radius:100px / 160px; margin-top:2px;}
+.video-title{ font-weight: bold;text-align:center;}
+.video-author{ color: #df1f1f; font-size: 14px; padding: 5px 0;}
+.video-description{ color: #727785; font-size: 12px; line-height: 1.5;}
+.video:hover{ background: #22242a; color: white;}
+#current_player{
+
+}
+#player{
+	display: none;
+}
+.placeHolderInside{
+	padding-top:10px;
+	padding-bottom:10px;
+}
+/*#fixed{ background: #f2f5fd; background: #f5f5f5; height: 100%;overflow-x: hidden;  width: 25%;}
+.video{ cursor: pointer; min-height: 90px; padding: 10px; padding-left: 140px; position: relative;overflow: hidden;}
+.video:nth-child(2n-1){ background: white;}
+.video-image{ float: left; left: 10px; position: absolute; top: 10px;-webkit-border-radius: 12px / 24px;-moz-border-radius:12px / 24px; border-radius:12px / 24px;}
+.video-title{ padding-top: 5px;font-weight: bold;;}
+.video-author{ color: #df1f1f; font-size: 14px; padding: 5px 0;}
+.video-description{ color: #727785; font-size: 12px; line-height: 1.5;}
+.video:hover{ background: #22242a; color: white;}*/
+#mainCtrl{
+  height: 100%
+}
+#results{
+    height: 100%;
+    overflow: auto;
+}
+
+#player, #playlist{ background: white; height: 480px; overflow: hidden; position: absolute; right: 0; top: 80px; width: 640px;}
+
+#player{ background: black;}
+
+#playlist{ background: #22242a; color: #727785; font-size: 16px; height: 464px; overflow-x: hidden; top: 560px; width: 640px;}
+#current{ color: white; font-size: 20px; padding: 20px;}
+#playlist ol, #playlist li{ cursor: pointer;}
+#playlist ol{ border-bottom: 1px solid #33363f; height: 340px; overflow-x: hidden;}
+#playlist li{ border-top: 1px solid #33363f; cursor: pointer;}
+#history li{ color: #33522d;}
+.item-title{ margin-right: 80px; padding: 10px 20px;}
+.item-title:hover{ background: #1171A2; color: white;}
+.item-delete{ color: #ac0809; float: right; text-align: center; padding: 10px 0; width: 80px;}
+.item-delete:hover{ background: #ac0809; color: white;}
+#history .item-title:hover{ background: #33522d; color: white;}
+#tabs, #tabs a{ background: #333; height: 64px; left: 0; line-height: 64px; position: absolute; text-align: center; width: 100%;}
+#tabs{ bottom: 0;}
+#tabs a{ color: #666; width: 50%;}
+#tabs a:last-child{ left: 50%;}
+#tabs .on{ background: #22242a; color: white;}
+#lecteur{
+	height: 50px;
+	background: gray;
+}
+
+::-webkit-input-placeholder{ color: #df1f1f;}
+:-moz-placeholder{ color: #df1f1f;}
+::-moz-placeholder{ color: #df1f1f;}
+:-ms-input-placeholder{ color: #df1f1f;}
