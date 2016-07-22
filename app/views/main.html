@@ -11,6 +11,12 @@
       	 	 <a id="pause">Pause</a>
      	</nav>
  	</header>
+<div id='lecteur'>
+	<div id='play'>
+	<div id='progresBar'>
+    	<uib-progress ng-click="handleProgressBarClick($event)"><uib-bar ng-repeat="bar in stacked track by $index" value="bar.value" type="{{bar.type}}" >{{bar.time}}</uib-bar></uib-progress>
+	</div>
+</div>
 <div id="fixed" when-scrolled="loadMore()">
     <div class="video" data-ng-repeat="video in results track by $index" data-ng-click="launchInside(video.id, video.title,$index)" ng-dblclick="queue(video.id, video.title)"> <!-- data-ng-click="queue(video.id, video.title)"> -->
     		<div ng-show='!showAll[$index]'>
@@ -28,12 +34,7 @@
     <div id="player">
       <div id="placeholder"></div>
     </div>
-<div id='lecteur'>
-	<div id='play'>
-	<div>
-    	<uib-progress><uib-bar ng-repeat="bar in stacked track by $index" value="bar.value" type="{{bar.type}}"></uib-bar></uib-progress>
-	</div>
-</div>
+
 <!--     <div id="playlist">
       <p id="current">{{ youtube.videoTitle }}</p>
       <ol id="upcoming" data-ng-show="playlist">

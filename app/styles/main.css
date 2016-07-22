@@ -70,10 +70,18 @@ ul {
 #tabs a{ color: #666; width: 50%;}
 #tabs a:last-child{ left: 50%;}
 #tabs .on{ background: #22242a; color: white;}
+#progresBar{
+	height: 20px;
+	width: 80%;
+	background: gray;
+	padding-left: 20%;
+}
 #lecteur{
-	height: 50px;
+	height: 20px;
+	width: 100%;
 	background: gray;
 }
+
 
 ::-webkit-input-placeholder{ color: #df1f1f;}
 :-moz-placeholder{ color: #df1f1f;}

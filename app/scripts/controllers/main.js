@@ -101,13 +101,19 @@ angular.module('secondApp')
     	$scope.pagination = pagination;
 
     };
+	$scope.handleProgressBarClick = function(e) {
+	  var fullProgressBarWidth = $(e.currentTarget).width();
+	  var requestedPosition = e.offsetX / fullProgressBarWidth;
+	  $log.info(requestedPosition);
+	  var youtube = VideosService.getYoutube();
+	  var duration = youtube.player.getDuration();
+	  youtube.player.seekTo(Math.floor(requestedPosition*duration));
+	};
 	var refresh = function(){
 		var youtube = VideosService.getYoutube();
 		if(youtube.state == "playing")
 		{
-	     var player = youtube.player;
-	     $log.info(player.getCurrentTime());
-	     $log.info(player.getDuration());	     
+	     var player = youtube.player;     
 	     if(player.getDuration())
 	     {
 	     var duration = player.getDuration();	     	
@@ -117,7 +123,12 @@ angular.module('secondApp')
 	     }
 	     var time = (player.getCurrentTime()/duration)*100;
 	     $scope.stacked = [];
-	     $scope.stacked.push({value:time,type:'danger'});
+		var totalSec = Math.floor(player.getCurrentTime()+0.5);
+		var hours = parseInt( totalSec / 3600 ) % 24;
+		var minutes = parseInt( totalSec / 60 ) % 60;
+		var seconds = totalSec % 60;
+		var result = (hours < 1 ? ''  : "0" + hours + ":")  + (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds  < 10 ? "0" + seconds : seconds);
+	     $scope.stacked.push({value:time,type:'danger',time:result});
 		}
 	};
 	$interval(refresh,1000);
