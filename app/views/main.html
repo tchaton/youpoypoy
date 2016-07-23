@@ -12,9 +12,9 @@
      	</nav>
  	</header>
 <div id='lecteur'>
-	<div id='play'>
-	<div id='progresBar'>
-    	<uib-progress ng-click="handleProgressBarClick($event)"><uib-bar ng-repeat="bar in stacked track by $index" value="bar.value" type="{{bar.type}}" >{{bar.time}}</uib-bar></uib-progress>
+	<div id='play'></div>
+	<div id='progresBar'> 
+    	<uib-progress ng-click="handleProgressBarClick($event)"><uib-bar id="progressBarContainer" ng-repeat="bar in stacked track by $index" value="bar.value" type="{{bar.type}}" >{{bar.time}}</uib-bar></uib-progress>
 	</div>
 </div>
 <div id="fixed" when-scrolled="loadMore()">

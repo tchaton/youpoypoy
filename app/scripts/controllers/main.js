@@ -128,6 +128,13 @@ angular.module('secondApp')
 		var minutes = parseInt( totalSec / 60 ) % 60;
 		var seconds = totalSec % 60;
 		var result = (hours < 1 ? ''  : "0" + hours + ":")  + (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds  < 10 ? "0" + seconds : seconds);
+
+		var totalSecD = Math.floor(duration);
+		var hoursD = parseInt( totalSecD / 3600 ) % 24;
+		var minutesD = parseInt( totalSecD / 60 ) % 60;
+		var secondsD = totalSecD % 60;
+		var resultD = (hoursD < 1 ? ''  : "0" + hoursD + ":")  + (minutesD < 10 ? "0" + minutesD : minutesD) + ":" + (secondsD  < 10 ? "0" + secondsD : secondsD);
+		result = result + ' / ' + resultD;
 	     $scope.stacked.push({value:time,type:'danger',time:result});
 		}
 	};

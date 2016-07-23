@@ -72,16 +72,17 @@ ul {
 #tabs .on{ background: #22242a; color: white;}
 #progresBar{
 	height: 20px;
-	width: 80%;
+	width: 100%;
 	background: gray;
-	padding-left: 20%;
 }
 #lecteur{
 	height: 20px;
 	width: 100%;
 	background: gray;
 }
-
+#progressBarContainer{
+	color: black;
+}
 
 ::-webkit-input-placeholder{ color: #df1f1f;}
 :-moz-placeholder{ color: #df1f1f;}
